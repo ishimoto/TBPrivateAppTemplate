@@ -1,0 +1,30 @@
+
+import groovy.util.AntBuilder
+
+def projectRoot = rootDir.toString()
+
+def ant = new AntBuilder()
+// Find all Applications by scanning the 'build.properties' files
+def scannera = ant.fileScanner {
+    fileset(dir: rootDir.toString()) {
+        include(name:'**/build.properties')
+    }
+}
+
+def nra = 0
+println 'Dynamically searching all private TreasureBoat Applications...'
+scannera.each {
+    nra = nra + 1
+    def projectName = it.toString().replace("/build.properties","")
+    projectName = projectName.replace(projectRoot+"/","")
+    include(projectName)
+}
+
+println 'Found ' + nra + ' private TreasureBoat applications.'
+println ''
+println '***********************************************************************'
+println '*                                                                     *'
+println '*    Starting Gradle Build for private TreasureBoat Applications      *'
+println '*                                                                     *'
+println '***********************************************************************'
+println ''
