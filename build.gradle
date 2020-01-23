@@ -1,0 +1,75 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+buildscript {
+    apply from: "gradle/versioning.gradle" // version info
+    
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.treasureboat.gradle:gradle-tb-plugin:$tbVersion"
+    }
+}
+
+def getCommitId() {
+    def output = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = output
+    }
+
+    return output.toString()
+}
+
+ext {
+    TBHashCode     = getCommitId().toString()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "$gradleVersion"
+    distributionType = 'all'
+}
+
+subprojects {
+    version = '1.0.0' //TODO: replace with correct version of your Application (required)
+    apply plugin: 'java'
+    apply plugin: 'tbapplication'
+    apply plugin: 'idea'
+    apply plugin: 'maven-publish'
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    eclipse {
+        classpath {
+            downloadSources = true
+            downloadJavadoc = true
+        }
+    }
+
+    idea {
+        module {
+            downloadJavadoc = true
+            downloadSources = true
+        }
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                logger.info(project.name)
+                artifactId 'com.example.'+ project.name.toString() // TODO: replace with correct artifactID for your application
+                from components.java
+            }
+        }
+    }
+}
