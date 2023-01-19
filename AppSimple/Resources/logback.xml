@@ -1,0 +1,65 @@
+<configuration scan="false" packagingData="false">
+	<!-- 	scan : will scan this file every minute for a change, and if there is a change it will automatically reload
+			packagingData : Packaging data can be very useful in identifying software versioning issues. However, it is rather expensive to compute -->
+
+	<!-- MAIN CONFIGURATION -->
+
+		<statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
+			<!--  statusListner : will add a log entry about this file and show you any problems if there are. Has to be the first line -->
+	
+		<shutdownHook />
+			<!-- in the absence of the class attribute, assume ch.qos.logback.core.hook.DefaultShutdownHook -->
+	
+		<contextName>LoggerContext</contextName>
+			<!-- Setting the context name is a simple and straightforward method in order to distinguish between multiple applications logging to the same target. -->
+	
+	<!-- SETUP -->
+		<!-- In the case to create it in '/var/log/' you have to check for correct permissions -->
+		<variable name="PATH" value="/Users/ishimoto/Desktop" />
+		<variable name="FILE_NAME" value="nameOfApp" />
+		
+		<!-- TBFile / TBUniqueFile : value + .log -->
+		<variable name="DESTINATION" value="${PATH}/${FILE_NAME}" />
+
+		<!-- TBRollingFile / TBSizeRolling : .log / .gz or .zip -->
+		<variable name="FILE_EXTENSION" value=".log" />
+		<variable name="ROLLING" value="%d{yyyy-MM-dd}" />
+		<variable name="ROLLING_HISTORY" value="30" />
+		<variable name="ROLLING_MAX_SIZE" value="3GB" />
+
+		<!-- TBSizeRolling :  -->
+		<variable name="ROLLING_FILE_SIZE" value="100MB" />
+
+		<!-- TBRollbar :  -->
+		<variable name="ACCESS_TOKEN" value="Your Token" />
+
+	<!-- INCLUDE TB PREDEFINED -->
+	
+		<!-- [TB-PREDEFINED] -->
+
+	<!-- FILTER -->
+	
+		<turboFilter class="org.treasureboat.foundation.logback.filter.TBF_LogbackDuplicateMessageFilter" />
+			<!-- This filter detects duplicate messages. -->
+
+	<!-- APPENDER -->
+	
+	<!-- LOGGER -->
+
+		<logger name="org.treasureboat.webcore.appserver.TBSession.responseloop" level="WARN" additivity="true" />
+			<!-- 'name' : The name of the package/logger 
+				 'level' (TRACE, DEBUG, INFO, WARN, ERROR, ALL or OFF)  
+				 'additivity' ([true]/false). if false it will not send to any appender attached higher in the hierarchy
+				 The <logger> element may contain zero or more <appender-ref> elements -->
+
+	<!-- ROOT -->
+
+		<root level="INFO">
+			<!-- the 'level' (TRACE, DEBUG, INFO, WARN, ERROR, ALL or OFF) The <root> element may contain zero or more <appender-ref> elements -->
+			<appender-ref ref="TBStdOut" />
+			<!--appender-ref ref="TBRollbar" /-->
+			<!--appender-ref ref="TBFile" /-->
+			<!--appender-ref ref="TBEmail" /-->
+		</root>
+		
+</configuration>
