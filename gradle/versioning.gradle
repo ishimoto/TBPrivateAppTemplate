@@ -2,6 +2,8 @@
  * Copyright (c) 2018.
  */
 version = rootProject.file("version.txt").text.trim()
-ext.tbVersion = version
+ext {
+    tbVersion = version
+}
 
 ext.gradleVersion = rootProject.file("versionGradle.txt").text.trim()

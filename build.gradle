@@ -15,6 +15,11 @@ buildscript {
     }
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.10.2"
+    distributionType = 'all'
+}
+
 def getCommitId() {
     def output = new ByteArrayOutputStream()
     exec {
@@ -29,11 +34,6 @@ ext {
     TBHashCode     = getCommitId().toString()
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = "$gradleVersion"
-    distributionType = 'all'
-}
-
 subprojects {
     version = '1.0.0' //TODO: replace with correct version of your Application (required)
     apply plugin: 'java'
@@ -41,8 +41,8 @@ subprojects {
     apply plugin: 'idea'
     apply plugin: 'maven-publish'
 
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+    sourceCompatibility = 10
+    targetCompatibility = 10
 
     repositories {
         mavenLocal()
@@ -67,7 +67,7 @@ subprojects {
         publications {
             mavenJava(MavenPublication) {
                 logger.info(project.name)
-                artifactId 'com.example.'+ project.name.toString() // TODO: replace with correct artifactID for your application
+                artifactId 'ca.cscw.' + project.name.toString() // TODO: replace with correct artifactID for your application
                 from components.java
             }
         }
