@@ -30,6 +30,27 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>${tb.slf4j}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.treasureboat</groupId>
+			<artifactId>TBFoundation</artifactId>
+			<version>10.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.treasureboat</groupId>
+			<artifactId>TBContentsDelivery</artifactId>
+			<version>10.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.treasureboat</groupId>
+			<artifactId>TBEnterprise</artifactId>
+			<version>10.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.treasureboat</groupId>
+			<artifactId>TBWebCore</artifactId>
+			<version>10.0.0</version>
+		</dependency>
 	
 	</dependencies>
 
