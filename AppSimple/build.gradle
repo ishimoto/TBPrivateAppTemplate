@@ -1,26 +1,10 @@
 // mainClassName = "com.your.app.Application"
 //  this is for running TBApps as a regular Java application in the future
 
-treasureboat {
-    applicationClass = '$basePackage.Application'
-    deploymentServers = ['localhost']
-    deploymentSSHUser = 'tbadm'
-    deploymentPath = '/tmp'
-    deploymentSSHPort = 22
-    deploymentSSHIgnoreHostKey = true
-    deploymentMonitorBounceTasks = ['localhost':'AppSimple']
-    deploymentWebserver = 'localhost'
-    deploymentWebserverSSHUser = 'tbadm'
-    webserverResourcePath = '/tmp'
-}
-
-// ** define your TreasureBoat framework dependencies below **
 
 dependencies {
     compile "TreasureBoat:org.treasureboat.TBFoundation:$tbVersion"
     compile "TreasureBoat:org.treasureboat.TBContentsDelivery:$tbVersion"
-    compile "TreasureBoat:org.treasureboat.TBExtensions:$tbVersion"
     compile "TreasureBoat:org.treasureboat.TBEnterprise:$tbVersion"
     compile "TreasureBoat:org.treasureboat.TBWebCore:$tbVersion"
-    compile "TreasureBoat:org.treasureboat.TBPrototypes:$tbVersion"
 }
