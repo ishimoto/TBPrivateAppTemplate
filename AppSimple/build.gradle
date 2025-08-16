@@ -3,8 +3,13 @@ treasureboat {
 }
 
 dependencies {
-    compile "TreasureBoat:org.treasureboat.TBFoundation:$tbVersion"
-    compile "TreasureBoat:org.treasureboat.TBContentsDelivery:$tbVersion"
-    compile "TreasureBoat:org.treasureboat.TBEnterprise:$tbVersion"
-    compile "TreasureBoat:org.treasureboat.TBWebCore:$tbVersion"
+
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	implementation("org.projectlombok:lombok:1.18.38")
+
+    compile "org.treasureboat:TBContentsDelivery:10.0.0"
+    compile "org.treasureboat:TBFoundation:10.0.0"
+    compile "org.treasureboat:TBEnterprise:10.0.0"
+    compile "org.treasureboat:TBWebCore:10.0.0"
+
 }
