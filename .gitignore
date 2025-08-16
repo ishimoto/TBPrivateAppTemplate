@@ -1,4 +1,9 @@
 .DS_Store
 bin
-/build/libs
+rebel.xml
+dist
+/build
+/AppSimple/build
 /.gradle
+/target
+*.class
