@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" 
+			xmlns="http://maven.apache.org/POM/4.0.0"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+
+	<name>AppSimple</name>
+    <artifactId>AppSimple</artifactId>
+
+	<properties>
+         <tb.lombok>1.18.34</tb.lombok> 
+         <tb.slf4j>2.0.17</tb.slf4j> 
+         <tb.logback>1.5.18</tb.logback> 
+	</properties>
+
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${tb.lombok}</version>
+ 			<scope>provided</scope>
+        </dependency>
+
+ 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${tb.slf4j}</version>
+		</dependency>
+	
+	</dependencies>
+
+    <parent>
+	    <groupId>com.mycompany</groupId>
+	    <artifactId>simpleapp</artifactId>
+	    <version>1.0</version>
+    </parent>
+
+</project>
