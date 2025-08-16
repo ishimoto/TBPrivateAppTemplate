@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Create condition="!hasEoForKey('TBDomain.name=TrainingDomain')" target="dev,common,deploy" autoCreation="2025-03-05T17:19:19.609348+09:00[Asia/Tokyo]">
+
+	<TBDomain
+		_qualifier="shortID=_MD_"
+		accessPermission = "{}"
+		description = "Create Automatically by TreasureBoat EOMigration as default Domain."
+		name = "TrainingDomain"
+		shortDescription = "Training Domain"
+		shortID = "_MD_"
+	/>
+
+</Create>
