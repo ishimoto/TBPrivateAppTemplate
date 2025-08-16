@@ -13,5 +13,5 @@ echo "***** Build your Application : start"
 ./gradlew build TBApplicationTarGz TBWebServerTarGz
 echo "***** Build your Application : end"
 echo ""
-cd BilanCarboneCAF/build/distributions
+cd AppSimple/build/distributions
 open .
