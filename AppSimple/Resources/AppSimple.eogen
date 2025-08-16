@@ -1,8 +1,0 @@
- -destination GeneratedEOs \
- -extension java \
- -java \
- -model Resources/AppSimple.eomodeld \
- -packagedirs \
- -subclassDestination Sources \
- -verbose \
- -loadModelGroup
