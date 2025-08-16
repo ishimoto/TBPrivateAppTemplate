@@ -1,6 +1,6 @@
-// mainClassName = "com.your.app.Application"
-//  this is for running TBApps as a regular Java application in the future
-
+treasureboat {
+	applicationClass = 'com.your.app.Application'	
+}
 
 dependencies {
     compile "TreasureBoat:org.treasureboat.TBFoundation:$tbVersion"
