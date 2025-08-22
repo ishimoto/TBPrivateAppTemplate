@@ -7,9 +7,15 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.projectlombok/lombok
 	implementation("org.projectlombok:lombok:1.18.38")
 
-    compile "org.treasureboat:TBContentsDelivery:10.0.0"
-    compile "org.treasureboat:TBFoundation:10.0.0"
-    compile "org.treasureboat:TBEnterprise:10.0.0"
-    compile "org.treasureboat:TBWebCore:10.0.0"
+// tb-content
+    compile "org.treasureboat:tb-content-delivery:10.1.0"
+    
+// tb-core
+    compile "org.treasureboat:tb-core-foundation:10.1.0"
+    compile "org.treasureboat:tb-core-enterprise:10.1.0"
+    compile "org.treasureboat:tb-core-web:10.1.0"
+    
+// tb-template    
+    compile "org.treasureboat:tb-template-framework:10.1.0"
 
 }

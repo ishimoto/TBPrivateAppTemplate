@@ -12,9 +12,45 @@
          <tb.lombok>1.18.34</tb.lombok> 
          <tb.slf4j>2.0.17</tb.slf4j> 
          <tb.logback>1.5.18</tb.logback> 
+
+		<tb.fw.content>10.1.0</tb.fw.content>
+		<tb.fw.core>10.1.0</tb.fw.core>
+		<tb.fw.template>10.1.0</tb.fw.template>
 	</properties>
 
-	<dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.treasureboat</groupId>
+				<artifactId>tb-content-delivery</artifactId>
+				<version>${tb.fw.content}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.treasureboat</groupId>
+				<artifactId>tb-core-foundation</artifactId>
+				<version>${tb.fw.core}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.treasureboat</groupId>
+				<artifactId>tb-core-enterprise</artifactId>
+				<version>${tb.fw.core}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.treasureboat</groupId>
+				<artifactId>tb-core-web</artifactId>
+				<version>${tb.fw.core}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.treasureboat</groupId>
+				<artifactId>tb-template-framework</artifactId>
+				<version>${tb.fw.template}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+			
+		
+
+		<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
@@ -33,23 +69,23 @@
 
 		<dependency>
 			<groupId>org.treasureboat</groupId>
-			<artifactId>TBFoundation</artifactId>
-			<version>10.0.0</version>
+			<artifactId>tb-core-foundation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.treasureboat</groupId>
-			<artifactId>TBContentsDelivery</artifactId>
-			<version>10.0.0</version>
+			<artifactId>tb-content-delivery</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.treasureboat</groupId>
-			<artifactId>TBEnterprise</artifactId>
-			<version>10.0.0</version>
+			<artifactId>tb-core-enterprise</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.treasureboat</groupId>
-			<artifactId>TBWebCore</artifactId>
-			<version>10.0.0</version>
+			<artifactId>tb-core-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.treasureboat</groupId>
+			<artifactId>tb-template-framework</artifactId>
 		</dependency>
 	
 	</dependencies>
