@@ -13,9 +13,9 @@
          <tb.slf4j>2.0.17</tb.slf4j> 
          <tb.logback>1.5.18</tb.logback> 
 
-		<tb.fw.content>10.1.0</tb.fw.content>
-		<tb.fw.core>10.1.0</tb.fw.core>
-		<tb.fw.template>10.1.0</tb.fw.template>
+		<tb.fw.content>10.1.2</tb.fw.content>
+		<tb.fw.core>10.1.4</tb.fw.core>
+		<tb.fw.template>11.0.0</tb.fw.template>
 	</properties>
 
 	<dependencyManagement>
