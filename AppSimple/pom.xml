@@ -6,10 +6,10 @@
     <modelVersion>4.0.0</modelVersion>
 
 	<name>AppSimple</name>
-    <artifactId>AppSimple</artifactId>
+    <artifactId>tb-sapp-simple</artifactId>
 
 	<properties>
-         <tb.lombok>1.18.34</tb.lombok> 
+         <tb.lombok>1.18.38</tb.lombok> 
          <tb.slf4j>2.0.17</tb.slf4j> 
          <tb.logback>1.5.18</tb.logback> 
 
@@ -47,10 +47,8 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-			
-		
 
-		<dependencies>
+	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
